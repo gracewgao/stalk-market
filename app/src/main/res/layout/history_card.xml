@@ -54,7 +54,7 @@
                 android:paddingVertical="10dp"
                 android:paddingHorizontal="20dp"
                 android:layout_marginRight="95dp"
-                layout android:layout_alignParentRight="true"
+                android:layout_alignParentRight="true"
                 android:text="-$30"/>
             <TextView
                 android:id="@+id/balance"
