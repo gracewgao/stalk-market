@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/middleGreen">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            android:layout_gravity="center_horizontal"
+
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppmed"
+                    android:layout_marginLeft="45dp"
+                    android:text="Welcome!"
+                    android:textSize="45dp"
+                    android:textColor="@color/lightText" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/leaf" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="45dp"
+                android:text="The time has come for you to start growing your own crops little one."
+                android:fontFamily="@font/poppreg"
+                android:textSize="18dp"
+                android:textColor="@color/lightText" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/little" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+
+                android:layout_height="wrap_content"
+                >
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/poppreg"
+
+                    android:textColor="@color/lightText"
+                    android:text="Your parents have entrusted you with a small bundle of $300 for you to start off your farm!" />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-50dp"
+
+                    android:layout_gravity="right"
+                    android:src="@drawable/next_two"
+                    android:background="@null"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+</FrameLayout>

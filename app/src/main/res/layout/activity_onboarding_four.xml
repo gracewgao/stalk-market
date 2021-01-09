@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightText">
+    <androidx.cardview.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="360dp"
+        android:layout_height="670dp"
+        card_view:cardCornerRadius="30dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:text="Why would I buy a more expensive plant?"
+                android:textSize="20dp"
+                android:textColor="@color/darkGreen" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:text="Expensive plants are expensive because more people want them!
+This is a concept called supply &amp; demand. The more people that want something, the more expensive it is!"
+                android:textSize="12dp"
+                android:textColor="@color/darkGreen" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cuate" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal"
+                android:text="You should buy a plant that you think more people will want later. That way, when you sell your plant it’ll be more expensive, and you’ll earn even more money!
+For example, if I buy cauliflour for $50 and later people love cauliflour so much that they’ll pay $70 for it, then if you sell a cauliflour you’ll have earned $50!"
+                android:textSize="12dp"
+                android:textColor="@color/darkGreen" />
+
+        </LinearLayout>
+
+    </ScrollView>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>
