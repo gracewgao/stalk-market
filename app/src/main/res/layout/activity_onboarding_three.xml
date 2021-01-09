@@ -14,48 +14,168 @@
             android:layout_gravity="center_horizontal"
             android:orientation="vertical">
             <TextView
-                android:layout_width="150dp"
+                android:layout_width="match_parent"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="45dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="Let’s pick your first plant "
+
+                android:text="Let’s pick your\nfirst plant "
                 android:fontFamily="@font/poppins_medium"
-                android:textSize="20dp"
+                android:textSize="35dp"
                 android:textColor="@color/lightText" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/plant" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
                     android:orientation="vertical">
-                    <TextView
+
+                    <RelativeLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="snow peas"
-                        android:textSize="20dp"
-                        android:textColor="@color/lightText" />
-                    <ImageButton
-                        android:background="@null"
-                        android:src="@drawable/starterplantpurchase"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="purchase" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp"
-                        android:textColor="@color/lightText"
-                        android:text="$100" />
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:src="@drawable/block" />
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/block" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="30dp"
+                                android:layout_marginLeft="100dp"
+                                android:orientation="horizontal"
+                                >
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/plant" />
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginLeft="20dp"
+                                    >
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:text="snow peas"
+                                        android:fontFamily="@font/poppins_medium"
+                                        android:textSize="25dp"
+
+                                        android:textColor="@color/darkGreen"
+                                        android:layout_height="wrap_content"/>
+                                    <ImageButton
+                                        android:background="@null"
+
+                                        android:src="@drawable/starterplantpurchase"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        />
+                                </LinearLayout>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:textSize="25dp"
+                                    android:textColor="@color/darkGreen"
+                                    android:text="$100"/>
+                            </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="30dp"
+                                    android:layout_marginLeft="100dp"
+                                    android:orientation="horizontal"
+                                    >
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/plant" />
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="20dp"
+                                        android:orientation="vertical"
+                                        >
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:text="tomatoes"
+                                            android:fontFamily="@font/poppins_medium"
+                                            android:textSize="25dp"
+                                            android:textColor="@color/darkGreen"
+                                            android:layout_height="wrap_content"/>
+                                        <ImageButton
+                                            android:background="@null"
+
+                                            android:src="@drawable/starterplantpurchase"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            />
+                                    </LinearLayout>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="25dp"
+                                        android:fontFamily="@font/poppins_medium"
+                                        android:textSize="25dp"
+                                        android:textColor="@color/darkGreen"
+                                        android:text="$80"/>
+                                </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="30dp"
+                                android:layout_marginLeft="100dp"
+                                android:orientation="horizontal"
+                                >
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/plant" />
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:orientation="vertical"
+                                    >
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:text="cauliflower"
+                                        android:fontFamily="@font/poppins_medium"
+                                        android:textSize="25dp"
+                                        android:textColor="@color/darkGreen"
+                                        android:layout_height="wrap_content"/>
+                                    <ImageButton
+                                        android:background="@null"
+
+                                        android:src="@drawable/starterplantpurchase"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="25dp"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:textSize="25dp"
+                                    android:textColor="@color/darkGreen"
+                                    android:text="$50"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
                 </LinearLayout>
 
             </LinearLayout>
@@ -63,6 +183,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/lightText"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
                 android:text="Why would I buy a more expensive plant?" />
 
 
