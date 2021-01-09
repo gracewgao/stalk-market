@@ -29,7 +29,7 @@
                 android:layout_marginTop="30dp"
                 android:text="did you know?"
                 android:textSize="20dp"
-                android:fontFamily="@font/poppins"
+                android:fontFamily="@font/poppins_medium"
                 android:layout_centerHorizontal="true"
                 android:textColor="@color/darkGreen" />
             <TextView

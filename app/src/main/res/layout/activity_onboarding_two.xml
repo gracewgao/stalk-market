@@ -23,7 +23,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppmed"
+                    android:fontFamily="@font/poppins_medium"
                     android:layout_marginLeft="45dp"
                     android:text="Welcome!"
                     android:textSize="45dp"
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="45dp"
                 android:text="The time has come for you to start growing your own crops little one."
-                android:fontFamily="@font/poppreg"
+                android:fontFamily="@font/poppins"
                 android:textSize="18dp"
                 android:textColor="@color/lightText" />
             <ImageView
@@ -62,7 +62,7 @@
                     android:textSize="18dp"
                     android:layout_marginLeft="45dp"
                     android:layout_marginTop="30dp"
-                    android:fontFamily="@font/poppreg"
+                    android:fontFamily="@font/poppins"
 
                     android:textColor="@color/lightText"
                     android:text="Your parents have entrusted you with a small bundle of $300 for you to start off your farm!" />

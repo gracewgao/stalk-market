@@ -18,7 +18,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="Let’s pick your first plant "
-                android:fontFamily="@font/poppmed"
+                android:fontFamily="@font/poppins_medium"
                 android:textSize="20dp"
                 android:textColor="@color/lightText" />
             <LinearLayout
