@@ -56,14 +56,14 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
         public TextView textView;
         public MyViewHolder(View v) {
             super(v);
-            pointsTv = v.findViewById(R.id.card_points);
+           // pointsTv = v.findViewById(R.id.card_points);
             titleTv = v.findViewById(R.id.card_title);
             timeTopTv = v.findViewById(R.id.card_time_top);
-            andTv = v.findViewById(R.id.card_sender);
+          // andTv = v.findViewById(R.id.card_sender);
             iconImg = v.findViewById(R.id.mission_icon);
             doneButton = v.findViewById(R.id.done_button);
             cardBack = v.findViewById(R.id.cardback);
-            pointsCard = v.findViewById(R.id.top_card);
+           // pointsCard = v.findViewById(R.id.top_card);
         }
     }
 

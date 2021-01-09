@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         setContentView(R.layout.activity_main);
 
         // sets up nav bar and fragments
-        BottomNavigationView navigation = findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(this);
+        //BottomNavigationView navigation = findViewById(R.id.navigation);
+       // navigation.setOnNavigationItemSelectedListener(this);
         final MissionsFragment mission = new MissionsFragment();
         loadFragment(mission);
 
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         if(fragment != null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
+                  //  .replace(R.id.fragment_container, fragment)
                     .commit();
 
             return true;
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         Fragment fragment = null;
-        switch(menuItem.getItemId()) {
+      /*  switch(menuItem.getItemId()) {
             case R.id.navigation_missions:
                 fragment = new MissionsFragment();
                 break;
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             case R.id.navigation_leaderboard:
                 fragment = new LeaderboardFragment();
                 break;
-        }
+        }*/
         return loadFragment(fragment);
     }
 
