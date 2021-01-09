@@ -11,6 +11,18 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="top">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:drawableLeft="@drawable/money"
+            android:text="$300"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            style="?android:attr/borderlessButtonStyle"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/darkGreen"
+            android:background="@color/lightText"/>
         <LinearLayout
             android:id="@+id/title"
             android:orientation="vertical"
