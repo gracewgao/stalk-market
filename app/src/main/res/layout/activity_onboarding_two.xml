@@ -29,6 +29,8 @@
                     android:textSize="45dp"
                     android:textColor="@color/lightText" />
                 <ImageView
+                    argin android:layout_marginTop="13dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/leaf" />
