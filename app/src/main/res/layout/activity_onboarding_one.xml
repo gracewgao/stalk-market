@@ -29,6 +29,7 @@
                 android:layout_marginTop="30dp"
                 android:text="did you know?"
                 android:textSize="20dp"
+                android:fontFamily="@font/poppins"
                 android:layout_centerHorizontal="true"
                 android:textColor="@color/darkGreen" />
             <TextView
@@ -37,6 +38,7 @@
                 android:textAlignment="center"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="65dp"
+                android:fontFamily="@font/poppins"
                 android:layout_gravity="center_horizontal"
                 android:text="*insert fun fact here*"
                 android:textSize="12dp"
