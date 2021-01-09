@@ -29,7 +29,6 @@ import cooldudes.stalkmarket.model.MissionTemplate;
 
 import static cooldudes.stalkmarket.LoginActivity.famId;
 import static cooldudes.stalkmarket.LoginActivity.user;
-import static cooldudes.stalkmarket.MainActivity.member;
 
 // Generates the cards based on data from the Firebase (any requests within the last 30 minutes)
 
@@ -174,8 +173,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
                                             public void onClick(DialogInterface dialog, int which) {
                                                 // saves status in database
                                                 fireRef.child("families").child(famId).child("missions").child(m.getId()).child("status").setValue(1);
-                                                int newPoints = mPoints + member.getPoints();
-                                                fireRef.child("members").child(user.getUid()).child("points").setValue(newPoints);
+//                                                int newPoints = mPoints + member.getPoints();
+//                                                fireRef.child("members").child(user.getUid()).child("points").setValue(newPoints);
+//
                                             }
                                         })
                                         .setNegativeButton("Cancel", null)

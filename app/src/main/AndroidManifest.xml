@@ -10,8 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="cooldudes.stalkmarket.OnboardingActivity" />
-        <activity android:name="cooldudes.stalkmarket.JoinFamilyActivity" />
-        <activity android:name="cooldudes.stalkmarket.CreateFamilyActivity" />
         <activity android:name="cooldudes.stalkmarket.FamilyMemberProfile" />
         <activity android:name="cooldudes.stalkmarket.LoginActivity">
             <intent-filter>

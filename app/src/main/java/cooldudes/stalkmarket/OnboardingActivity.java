@@ -16,18 +16,11 @@ public class OnboardingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_onboarding);
 
         joinButton = findViewById(R.id.button_join);
-        createButton = findViewById(R.id.button_create);
+
         joinButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(OnboardingActivity.this, JoinFamilyActivity.class);
-                startActivity(i);
-            }
-        });
-        createButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(OnboardingActivity.this, CreateFamilyActivity.class);
+                Intent i = new Intent(OnboardingActivity.this, MainActivity.class);
                 startActivity(i);
             }
         });
