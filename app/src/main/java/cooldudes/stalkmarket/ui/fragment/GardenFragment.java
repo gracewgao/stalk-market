@@ -56,7 +56,7 @@ public class GardenFragment extends Fragment {
             transactionsRef.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot snapshot) {
-                    long balance = (long) snapshot.getValue();
+                    int balance = snapshot.getValue(Integer.class);
                     balanceButton.setText(String.valueOf(balance));
                 }
 

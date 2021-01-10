@@ -23,6 +23,7 @@ import cooldudes.stalkmarket.model.Stalk;
 import cooldudes.stalkmarket.model.Transaction;
 import cooldudes.stalkmarket.ui.activity.MainActivity;
 
+import static cooldudes.stalkmarket.ui.activity.LoginActivity.user;
 import static cooldudes.stalkmarket.ui.activity.MainActivity.farmer;
 
 
@@ -73,41 +74,26 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         final String stalkId = t.getsId();
         final int action = t.getAction();
         final int cost = t.getCost();
+        final int balance = t.getBalance();
 
-        // retrieves info from mission template
-        fireRef.child("users").child(farmer.getuId()).child(stalkId).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Stalk s = dataSnapshot.getValue(Stalk.class);
+        // card header depending on type
+        String header = "";
+        switch (action){
+            case 0:
+                header = "BUY";
+                //todo: add icons?
+                break;
+            case 1:
+                header = "SELL";
+                break;
+            case 2:
+                header = "WATER";
+                break;
+        }
 
-                holder.nameTv.setText(s.getBuyPrice());
-                holder.amtTv.setText(cost);
-
-                // card header depending on type
-                String header = "";
-                switch (action){
-                    case 0:
-                        header = "BUY";
-                        //todo: add icons?
-                        break;
-                    case 1:
-                        header = "SELL";
-                        break;
-                    case 2:
-                        header = "WATER";
-                        break;
-                }
-
-                holder.balanceTv.setText(header);
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(main.getApplicationContext(), "Oops! Something went wrong, please try again.", Toast.LENGTH_SHORT).show();
-            }
-        });
-
+        holder.nameTv.setText(header);
+        holder.amtTv.setText('$' + String.valueOf(cost));
+        holder.balanceTv.setText('$' + String.valueOf(balance));
 
     }
 

@@ -41,7 +41,6 @@ public class TransactionsFragment extends Fragment implements SwipeRefreshLayout
 
     private SwipeRefreshLayout swipeRefreshLayout;
     public RecyclerView recyclerView;
-    private TextView msgView;
     private View view;
 
     private List<Transaction> transactions = new ArrayList<>();
@@ -65,7 +64,7 @@ public class TransactionsFragment extends Fragment implements SwipeRefreshLayout
             transactionsRef.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot snapshot) {
-                    int balance = (int) snapshot.getValue();
+                    int balance = snapshot.getValue(Integer.class);
                     balanceButton.setText(String.valueOf(balance));
                 }
 
@@ -120,7 +119,7 @@ public class TransactionsFragment extends Fragment implements SwipeRefreshLayout
         swipeRefreshLayout.setRefreshing(false);
     }
 
-    public static void tradeStalk(final boolean buy, final int template, final int quantity){
+    public static void tradeStalk(final boolean isBuy, final int template, final int quantity){
 
         final DatabaseReference fireRef = FirebaseDatabase.getInstance().getReference();
         fireRef.child("templates").child("stocks").child(String.valueOf(template)).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -129,7 +128,7 @@ public class TransactionsFragment extends Fragment implements SwipeRefreshLayout
                 StalkTemplate t = snapshot.getValue(StalkTemplate.class);
                 float price = t.getPrice();
                 // arbitrary game cost
-                final int gameCost = (int) price * 100 * quantity;
+                final int gameCost = (int) price * quantity;
 
                 final DatabaseReference stalkRef = fireRef.child("users").child(user.getUid()).child("inventory").child(String.valueOf(t.gettId()));
                 stalkRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -137,16 +136,28 @@ public class TransactionsFragment extends Fragment implements SwipeRefreshLayout
                     public void onDataChange(DataSnapshot snapshot) {
                         Stalk s = snapshot.getValue(Stalk.class);
 
-                        if (buy){
-                            int newBuyPrice = s.getBuyPrice() + gameCost;
+                        int buy = 0, currQuant = 0;
+                        if (s != null) {
+                            buy = s.getBuyPrice();
+                            currQuant = s.getQuantity();
+                        }
+
+                        if (isBuy){
+                            int newBuyPrice = buy + gameCost;
                             stalkRef.child("buyPrice").setValue(newBuyPrice);
-                            int newQuantity = s.getQuantity() + quantity;
+                            int newQuantity = currQuant + quantity;
                             stalkRef.child("quantity").setValue(newQuantity);
+                            Transaction t = new Transaction(0, -gameCost, farmer.getBalance()-gameCost);
+                            t.setsId(t.gettId());
+                            addTransaction(t);
                         } else {
-                            int newBuyPrice = s.getBuyPrice() - gameCost;
+                            int newBuyPrice = buy - gameCost;
                             stalkRef.child("buyPrice").setValue(newBuyPrice);
-                            int newQuantity = s.getQuantity() - quantity;
+                            int newQuantity = currQuant - quantity;
                             stalkRef.child("quantity").setValue(newQuantity);
+                            Transaction t = new Transaction(1, gameCost, farmer.getBalance()+gameCost);
+                            t.setsId(t.gettId());
+                            addTransaction(t);
                         }
                     }
 
@@ -166,20 +177,20 @@ public class TransactionsFragment extends Fragment implements SwipeRefreshLayout
     public static void addTransaction(Transaction t){
 
         // records transaction
-        final DatabaseReference fireRef = FirebaseDatabase.getInstance().getReference().child(user.getUid());
-        DatabaseReference transactionsRef = fireRef.child("transactions");
+        final DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("users").child(user.getUid());
+        DatabaseReference transactionsRef = userRef.child("transactions");
         String key = transactionsRef.push().getKey();
         t.settId(key);
         transactionsRef.child(key).setValue(t);
 
         // records cost in database
         final int cost = t.getCost();
-        fireRef.child("balance").addListenerForSingleValueEvent(new ValueEventListener() {
+        userRef.child("balance").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
-                int balance = (int) snapshot.getValue();
+                int balance = snapshot.getValue(Integer.class);
                 balance += cost;
-                fireRef.child("balance").setValue(balance);
+                userRef.child("balance").setValue(balance);
                 farmer.setBalance(balance);
             }
             @Override

@@ -13,7 +13,7 @@ public class Farmer {
     public Farmer(String userId, String userName){
         this.uId = userId;
         this.name = userName;
-        this.balance = 30;
+        this.balance = 300;
         this.inventory = new ArrayList<>();
     }
 
