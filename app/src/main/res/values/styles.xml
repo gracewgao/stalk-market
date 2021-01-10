@@ -23,4 +23,8 @@
         <item name="android:fontFamily">@font/poppins</item>
     </style>
 
+    <style name="tab_text" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
 </resources>

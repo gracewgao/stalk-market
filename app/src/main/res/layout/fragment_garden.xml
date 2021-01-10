@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/lightText"
     tools:context=".GardenFragment">
 
         <RelativeLayout
@@ -153,34 +154,50 @@
                     android:src="@drawable/green1"
                     />
             </LinearLayout>
-            <Button
+            <LinearLayout
+                android:id="@+id/harvest_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableTop="@drawable/harvest"
-                android:backgroundTint="@color/lightText"
-                android:layout_alignParentLeft="true"
-                android:layout_above="@+id/nav_view"
-                android:text="harvest"
-                android:textColor="@color/darkGreen"
-                android:fontFamily="@font/poppins"
-                android:textAllCaps="false"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_marginBottom="20dp"
-                />
-            <Button
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_alignParentBottom="true">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:src="@drawable/harvest"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/darkGreen"
+                    android:text="harvest"
+                    android:fontFamily="@font/poppins"
+                    android:textAllCaps="false"
+                    android:layout_marginBottom="10dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/water_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableTop="@drawable/water"
-                android:backgroundTint="@color/lightText"
-                android:layout_alignParentRight="true"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginRight="5dp"
                 android:layout_alignParentBottom="true"
-                android:text="water"
-                android:textColor="@color/darkGreen"
-                android:fontFamily="@font/poppins"
-                android:textAllCaps="false"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_marginBottom="20dp"
-                />
+                android:layout_alignParentRight="true">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:src="@drawable/water"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/darkGreen"
+                    android:text="water"
+                    android:fontFamily="@font/poppins"
+                    android:textAllCaps="false"
+                    android:layout_marginBottom="10dp"/>
+            </LinearLayout>
 
         </RelativeLayout>
 
