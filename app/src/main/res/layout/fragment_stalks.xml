@@ -119,7 +119,222 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
-            
+            <com.google.android.material.tabs.TabLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabTextAppearance="@style/tab_text"
+                app:tabTextColor="@color/offGreen"
+                app:tabSelectedTextColor="@color/darkGreen"
+                >
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BUY CROPS">
+                    dx.cardview.widget.CardView
+                    android:id="@+id/main_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="25dp"
+                    app:cardCornerRadius="18dp">
+
+                    <LinearLayout
+                        android:id="@+id/cardback"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@drawable/missioncardgrey">
+                        <ImageView
+                            android:id="@+id/image1"
+                            android:layout_width="30dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="15dp"
+                            android:src="@drawable/red4"/>
+                        <LinearLayout
+                            android:layout_width="230dp"
+                            android:layout_height="200px"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/card_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="10dp"
+                                android:text="tomatoes"
+                                android:textColor="@color/darkGreen"
+                                android:textSize="14dp"
+                                android:fontFamily="@font/poppins_semibold"/>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:id="@+id/card_price"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:textColor="@color/darkGreen"
+                                    android:textFontWeight="500"
+                                    android:fontFamily="@font/roboto_bold"
+                                    android:textSize="18dp"
+                                    android:text="$50"/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:textColor="@color/darkGreen"
+                                    android:textFontWeight="500"
+                                    android:fontFamily="@font/roboto_bold"
+                                    android:textSize="11dp"
+                                    android:text="/ pot"/>
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="wrap_content"
+                                    android:paddingTop="5dp"
+                                    android:src="@drawable/tag" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- Button to accept -->
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <!-- Button to accept -->
+                            <Button
+                                android:id="@+id/done_button"
+                                android:layout_width="200dp"
+                                android:layout_height="200dp"
+                                android:layout_marginVertical="5dp"
+                                android:layout_marginRight="5dp"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:background="@drawable/buy"
+                                android:textColor="#FEF5EF"
+                                android:textSize="30px"
+                                android:gravity="top|center"
+                                android:paddingTop="18dp"
+                                android:text="BUY"
+                                android:lineHeight="13dp"
+                                android:drawablePadding="-60dp"
+                                />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView><androi
+                </com.google.android.material.tabs.TabItem>
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SELL CROPS">
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/sell_card1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="25dp"
+                        app:cardCornerRadius="18dp">
+
+                        <LinearLayout
+                            android:id="@+id/sell_cardback1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="@drawable/missioncardgrey">
+                            <ImageView
+                                android:id="@+id/sell_image1"
+                                android:layout_width="30dp"
+                                android:layout_height="50dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="15dp"
+                                android:src="@drawable/red4"/>
+                            <LinearLayout
+                                android:layout_width="230dp"
+                                android:layout_height="200px"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:id="@+id/sell_title1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="10dp"
+                                    android:text="tomatoes"
+                                    android:textColor="@color/darkGreen"
+                                    android:textSize="14dp"
+                                    android:fontFamily="@font/poppins_semibold"/>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:id="@+id/sell_price1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="20dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="5dp"
+                                        android:textColor="@color/darkGreen"
+                                        android:textFontWeight="500"
+                                        android:fontFamily="@font/roboto_bold"
+                                        android:textSize="18dp"
+                                        android:text="$50"/>
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginHorizontal="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="5dp"
+                                        android:textColor="@color/darkGreen"
+                                        android:textFontWeight="500"
+                                        android:fontFamily="@font/roboto_bold"
+                                        android:textSize="11dp"
+                                        android:text="/ pot"/>
+                                    <ImageView
+                                        android:layout_width="30dp"
+                                        android:layout_height="wrap_content"
+                                        android:paddingTop="5dp"
+                                        android:src="@drawable/sell" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- Button to accept -->
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <!-- Button to accept -->
+                                <Button
+                                    android:id="@+id/done_button"
+                                    android:layout_width="200dp"
+                                    android:layout_height="200dp"
+                                    android:layout_marginVertical="5dp"
+                                    android:layout_marginRight="5dp"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:background="@drawable/buy"
+                                    android:textColor="#FEF5EF"
+                                    android:textSize="30px"
+                                    android:gravity="top|center"
+                                    android:paddingTop="18dp"
+                                    android:text="BUY"
+                                    android:lineHeight="13dp"
+                                    android:drawablePadding="-60dp"
+                                    />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </com.google.android.material.tabs.TabItem>
+            </com.google.android.material.tabs.TabLayout>
 
             <!-- Refreshes Requests -->
             <!-- <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
