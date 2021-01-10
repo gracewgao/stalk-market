@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         // sets up nav bar and fragments
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
-        final MissionsFragment gardenFragment = new MissionsFragment();
+        final TransactionsFragment gardenFragment = new TransactionsFragment();
         loadFragment(gardenFragment);
 
         // finds user's stocks
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 farmer = dataSnapshot.getValue(Farmer.class);
-                gardenFragment.getMissions();
+                gardenFragment.getTransactions();
             }
 
             @Override

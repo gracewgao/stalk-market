@@ -66,9 +66,7 @@ public class TransactionsFragment extends Fragment implements SwipeRefreshLayout
         mAdapter = new TransactionAdapter(transactions, main);
         recyclerView.setAdapter(mAdapter);
 
-        if (famId!=null){
-            getTransactions();
-        }
+        getTransactions();
 
         return view;
     }
