@@ -53,13 +53,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:backgroundTint="@color/lightText"
-                android:src="@drawable/moreArrow"/>
-
+                android:src="@drawable/morearrow"/>
         </LinearLayout>
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipe_refresh_layout"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view"
