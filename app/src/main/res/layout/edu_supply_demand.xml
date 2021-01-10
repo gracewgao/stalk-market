@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="360dp"
+        android:layout_height="670dp"
+        card_view:cardCornerRadius="30dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/lightText">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/close"
+                android:layout_margin="10dp"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingTop="50dp"
+                    android:paddingLeft="40dp"
+                    android:paddingRight="40dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Why would I buy a more expensive plant?"
+                        android:paddingBottom="10dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textSize="18dp"
+                        android:textColor="@color/darkGreen" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Expensive plants are expensive because more people want them!
+                    \n\nThis is a concept called supply &amp; demand. The more people that want something, the more expensive it is!"
+                        android:textSize="14dp"
+                        android:fontFamily="@font/poppins"
+                        android:textColor="@color/darkGreen" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="10dp"
+                        android:src="@drawable/cuate" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="You should buy a plant that you think more people will want later. That way, when you sell your plant it’ll be more expensive, and you’ll earn even more money!
+                    \n\nFor example, if I buy cauliflour for $50 and later people love cauliflour so much that they’ll pay $70 for it, then if you sell a cauliflour you’ll have earned $50!"
+                        android:textSize="14dp"
+
+                        android:fontFamily="@font/poppins"
+                        android:textColor="@color/darkGreen" />
+                </LinearLayout>
+
+            </ScrollView>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>
