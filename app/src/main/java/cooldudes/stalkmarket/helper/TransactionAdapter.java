@@ -93,6 +93,9 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
                     case 1:
                         header = "SELL";
                         break;
+                    case 2:
+                        header = "WATER";
+                        break;
                 }
 
                 holder.balanceTv.setText(header);

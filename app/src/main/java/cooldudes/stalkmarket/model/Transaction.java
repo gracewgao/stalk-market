@@ -3,14 +3,15 @@ package cooldudes.stalkmarket.model;
 public class Transaction implements Comparable<Transaction>{
 
     private String tId, sId;
-    private int action, cost;
+    private int action, cost, balance;
     private long time;
 
     public Transaction(){}
 
-    public Transaction(String transactionId, int actionType){
-        this.tId = transactionId;
+    public Transaction(int actionType, int cost, int balance){
         this.action = actionType;
+        this.cost = cost;
+        this.balance = balance;
         // records time of request
         this.time = System.currentTimeMillis();
     }
@@ -87,5 +88,13 @@ public class Transaction implements Comparable<Transaction>{
 
     public void setAction(int action) {
         this.action = action;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
     }
 }

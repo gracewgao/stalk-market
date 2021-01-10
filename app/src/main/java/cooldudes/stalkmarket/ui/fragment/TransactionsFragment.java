@@ -27,6 +27,8 @@ import java.util.List;
 
 import cooldudes.stalkmarket.R;
 import cooldudes.stalkmarket.helper.TransactionAdapter;
+import cooldudes.stalkmarket.model.Stalk;
+import cooldudes.stalkmarket.model.StalkTemplate;
 import cooldudes.stalkmarket.model.Transaction;
 import cooldudes.stalkmarket.ui.activity.MainActivity;
 
@@ -58,7 +60,21 @@ public class TransactionsFragment extends Fragment implements SwipeRefreshLayout
         main = (MainActivity) getActivity();
 
         balanceButton = view.findViewById(R.id.balance);
-        if (farmer != null) balanceButton.setText(String.valueOf(farmer.getBalance()));
+        if (user != null) {
+            DatabaseReference transactionsRef = fireRef.child("users").child(user.getUid()).child("balance");
+            transactionsRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot snapshot) {
+                    int balance = (int) snapshot.getValue();
+                    balanceButton.setText(String.valueOf(balance));
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    Log.e(TAG, "onCancelled: " + databaseError);
+                }
+            });
+        }if (farmer != null) balanceButton.setText(String.valueOf(farmer.getBalance()));
 
         swipeRefreshLayout = view.findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(this);
@@ -102,6 +118,76 @@ public class TransactionsFragment extends Fragment implements SwipeRefreshLayout
             }
         });
         swipeRefreshLayout.setRefreshing(false);
+    }
+
+    public static void tradeStalk(final boolean buy, final int template, final int quantity){
+
+        final DatabaseReference fireRef = FirebaseDatabase.getInstance().getReference();
+        fireRef.child("templates").child("stocks").child(String.valueOf(template)).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                StalkTemplate t = snapshot.getValue(StalkTemplate.class);
+                float price = t.getPrice();
+                // arbitrary game cost
+                final int gameCost = (int) price * 100 * quantity;
+
+                final DatabaseReference stalkRef = fireRef.child("users").child(user.getUid()).child("inventory").child(String.valueOf(t.gettId()));
+                stalkRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot snapshot) {
+                        Stalk s = snapshot.getValue(Stalk.class);
+
+                        if (buy){
+                            int newBuyPrice = s.getBuyPrice() + gameCost;
+                            stalkRef.child("buyPrice").setValue(newBuyPrice);
+                            int newQuantity = s.getQuantity() + quantity;
+                            stalkRef.child("quantity").setValue(newQuantity);
+                        } else {
+                            int newBuyPrice = s.getBuyPrice() - gameCost;
+                            stalkRef.child("buyPrice").setValue(newBuyPrice);
+                            int newQuantity = s.getQuantity() - quantity;
+                            stalkRef.child("quantity").setValue(newQuantity);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e(TAG, "onCancelled: " + databaseError);
+            }
+        });
+    }
+
+    public static void addTransaction(Transaction t){
+
+        // records transaction
+        final DatabaseReference fireRef = FirebaseDatabase.getInstance().getReference().child(user.getUid());
+        DatabaseReference transactionsRef = fireRef.child("transactions");
+        String key = transactionsRef.push().getKey();
+        t.settId(key);
+        transactionsRef.child(key).setValue(t);
+
+        // records cost in database
+        final int cost = t.getCost();
+        fireRef.child("balance").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                int balance = (int) snapshot.getValue();
+                balance += cost;
+                fireRef.child("balance").setValue(balance);
+                farmer.setBalance(balance);
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e(TAG, "onCancelled: " + databaseError);
+            }
+        });
+
     }
 
     // reloads when refreshed

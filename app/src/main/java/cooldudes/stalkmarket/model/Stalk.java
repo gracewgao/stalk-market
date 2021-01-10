@@ -3,7 +3,7 @@ package cooldudes.stalkmarket.model;
 public class Stalk {
 
     private String sId;
-    private int template, currentPrice, buyPrice;
+    private int template, currentPrice, buyPrice, quantity;
 
     public Stalk(){}
 
@@ -12,6 +12,7 @@ public class Stalk {
         this.template = template;
         this.currentPrice = current;
         this.buyPrice = buy;
+        this.quantity = 0;
     }
 
     public String getsId() {
@@ -44,5 +45,13 @@ public class Stalk {
 
     public void setBuyPrice(int buyPrice) {
         this.buyPrice = buyPrice;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }

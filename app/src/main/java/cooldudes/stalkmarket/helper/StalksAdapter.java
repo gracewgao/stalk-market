@@ -20,6 +20,7 @@ import java.util.List;
 
 import cooldudes.stalkmarket.R;
 import cooldudes.stalkmarket.model.Stalk;
+import cooldudes.stalkmarket.model.StalkTemplate;
 import cooldudes.stalkmarket.ui.activity.MainActivity;
 
 import static cooldudes.stalkmarket.ui.activity.MainActivity.farmer;
@@ -69,31 +70,26 @@ public class StalksAdapter extends RecyclerView.Adapter<StalksAdapter.MyViewHold
         final Stalk s = stalkList.get(position);
         final String stalkId = s.getsId();
 
-        // retrieves info from mission template
         fireRef.child("users").child(farmer.getuId()).child(stalkId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Stalk s = dataSnapshot.getValue(Stalk.class);
 
                 holder.priceTv.setText(s.getCurrentPrice());
-                // todo: change later
-                holder.titleTv.setText("placeholder");
 
-//                holder.amtTv.setText(cost);
-//
-//                // card header depending on type
-//                String header = "";
-//                switch (action){
-//                    case 0:
-//                        header = "BUY";
-//                        //todo: add icons?
-//                        break;
-//                    case 1:
-//                        header = "SELL";
-//                        break;
-//                }
-//
-//                holder.balanceTv.setText(header);
+                // retrieves info from template
+                fireRef.child("templates").child(s.getsId()).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        StalkTemplate s = dataSnapshot.getValue(StalkTemplate.class);
+                        holder.titleTv.setText(s.getNickname());
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
 
             }
 

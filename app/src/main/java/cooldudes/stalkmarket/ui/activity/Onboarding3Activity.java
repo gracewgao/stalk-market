@@ -18,6 +18,7 @@ import cooldudes.stalkmarket.R;
 import cooldudes.stalkmarket.model.Farmer;
 
 import static cooldudes.stalkmarket.ui.activity.LoginActivity.user;
+import static cooldudes.stalkmarket.ui.fragment.TransactionsFragment.tradeStalk;
 
 public class Onboarding3Activity extends AppCompatActivity {
 
@@ -61,13 +62,17 @@ public class Onboarding3Activity extends AppCompatActivity {
         });
     }
 
-    protected void createUser(int choice) {
+    protected void createUser(final int choice) {
         final Farmer f = new Farmer(user.getUid(), user.getDisplayName());
         DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("users");
         userRef.child(user.getUid()).setValue(f).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 // successfully saved
+
+                // adds to inventory
+                tradeStalk(true, choice, 1);
+
                 Intent i = new Intent(Onboarding3Activity.this, MainActivity.class);
                 Onboarding3Activity.this.startActivity(i);
                 Onboarding3Activity.this.finish();

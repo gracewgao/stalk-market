@@ -626,7 +626,7 @@
 
 
             <!-- Refreshes Requests -->
-            <!-- <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
                 android:id="@+id/swipe_refresh_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -642,7 +642,7 @@
                     android:requiresFadingEdge="vertical">
 
                 </androidx.recyclerview.widget.RecyclerView>
-            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout> -->
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>
