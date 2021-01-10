@@ -9,29 +9,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="cooldudes.stalkmarket.OnboardingActivity" />
+
         <activity android:name="cooldudes.stalkmarket.FamilyMemberProfile" />
         <activity android:name="cooldudes.stalkmarket.LoginActivity">
+        <activity android:name=".model.Bank"></activity>
+        <activity android:name="com.cooldudes.stalkmarket.History" />
+        <activity android:name=".OnboardingActivity" />
+        <activity android:name=".JoinFamilyActivity" />
+        <activity android:name=".CreateFamilyActivity" />
+        <activity android:name=".History" />
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="cooldudes.stalkmarket.MainActivity" />
+        <activity android:name=".MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <receiver android:name="cooldudes.stalkmarket.AlarmReceiver"
+        <receiver
+            android:name=".AlarmReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-
     </application>
 
 </manifest>

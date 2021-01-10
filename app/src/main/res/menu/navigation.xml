@@ -2,26 +2,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_missions"
-        android:icon="@drawable/ic_baseline_dashboard_24"
-        android:title="missions" />
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/bank"
+        android:title="bank" />
 
     <item
-        android:id="@+id/navigation_leaderboard"
-        android:icon="@drawable/ic_baseline_bar_chart_24"
-        android:title="leaderboard" />
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/store"
+        android:title="store" />
 
     <item
-        android:id="@+id/navigation_family"
-        android:icon="@drawable/ic_baseline_people_alt_24"
-        android:title="family" />
-
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/garden"
+        android:title="garden" />
     <item
-        android:id="@+id/navigation_profile"
-        android:icon="@drawable/ic_baseline_account_circle_24"
-        android:title="profile"
-        />
-
-
+        android:id="@+id/navigation_history"
+        android:icon="@drawable/history"
+        android:title="history" />
+    <item
+        android:id="@+id/navigation_learn"
+        android:icon="@drawable/learn"
+        android:title="learn" />
 
 </menu>

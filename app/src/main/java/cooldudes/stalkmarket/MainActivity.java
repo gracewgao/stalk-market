@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         if(fragment != null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
+                  //  .replace(R.id.fragment_container, fragment)
                     .commit();
 
             return true;
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         Fragment fragment = null;
-        switch(menuItem.getItemId()) {
+      /*  switch(menuItem.getItemId()) {
             case R.id.navigation_missions:
                 fragment = new TransactionsFragment();
                 break;
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             case R.id.navigation_profile:
                 fragment = new TransactionsFragment();
                 break;
-        }
+        }*/
         return loadFragment(fragment);
     }
 
