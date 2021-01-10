@@ -57,14 +57,16 @@ public class AlarmReceiver extends BroadcastReceiver {
     public static void updatePrices(){
         final DatabaseReference fireRef = FirebaseDatabase.getInstance().getReference();
 
-        fireRef.child("templates").addListenerForSingleValueEvent(new ValueEventListener() {
+        fireRef.child("templates").child("stocks").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot s : dataSnapshot.getChildren()) {
                     // todo: update template prices
                     StalkTemplate template = s.getValue(StalkTemplate.class);
                     float price = getPrice(template.getRealStalk());
+                    long time = System.currentTimeMillis();
                     fireRef.child("templates").child(String.valueOf(template.gettId())).child("price").setValue(price);
+                    fireRef.child("templates").child(String.valueOf(template.gettId())).child("lastUpdate").setValue(time);
                 }
             }
 

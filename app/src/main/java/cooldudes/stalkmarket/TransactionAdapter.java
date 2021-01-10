@@ -27,8 +27,6 @@ import static cooldudes.stalkmarket.MainActivity.farmer;
 public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.MyViewHolder> {
     private static final String TAG = TransactionAdapter.class.getSimpleName();
 
-    private static int mPoints;
-
     private List<Transaction> transactionList;
     public MainActivity main;
 
@@ -36,23 +34,15 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         // views in card
-        public TextView pointsTv, titleTv, timeTopTv, andTv;
+        public TextView amtTv, nameTv, balanceTv;
         public ImageView iconImg;
-        public LinearLayout cardBack;
-        public android.widget.Button doneButton;
-        public CardView pointsCard;
 
-        public TextView textView;
         public MyViewHolder(View v) {
             super(v);
-            pointsTv = v.findViewById(R.id.card_points);
-            titleTv = v.findViewById(R.id.card_title);
-            timeTopTv = v.findViewById(R.id.card_time_top);
-            andTv = v.findViewById(R.id.card_sender);
-            iconImg = v.findViewById(R.id.mission_icon);
-            doneButton = v.findViewById(R.id.done_button);
-            cardBack = v.findViewById(R.id.cardback);
-            pointsCard = v.findViewById(R.id.top_card);
+            amtTv = v.findViewById(R.id.amt);
+            nameTv = v.findViewById(R.id.itemname);
+            balanceTv = v.findViewById(R.id.balance);
+            iconImg = v.findViewById(R.id.transaction_image);
         }
     }
 
@@ -68,7 +58,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
                                                        int viewType) {
         // create a new card view
         View card = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.transaction_row, parent, false);
+                .inflate(R.layout.transaction_card, parent, false);
         MyViewHolder vh = new MyViewHolder(card);
         return vh;
     }
@@ -88,8 +78,8 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Stalk s = dataSnapshot.getValue(Stalk.class);
 
-                holder.titleTv.setText(s.getBuyPrice());
-                holder.pointsTv.setText(cost);
+                holder.nameTv.setText(s.getBuyPrice());
+                holder.amtTv.setText(cost);
 
                 // card header depending on type
                 String header = "";
@@ -103,7 +93,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
                         break;
                 }
 
-                holder.timeTopTv.setText(header);
+                holder.balanceTv.setText(header);
 
             }
 
@@ -121,7 +111,6 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
     public int getItemCount() {
         return transactionList.size();
     }
-
 
 
 }

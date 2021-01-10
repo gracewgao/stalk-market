@@ -29,6 +29,7 @@ import cooldudes.stalkmarket.model.Mission;
 import cooldudes.stalkmarket.model.Transaction;
 
 import static cooldudes.stalkmarket.LoginActivity.famId;
+import static cooldudes.stalkmarket.LoginActivity.user;
 import static cooldudes.stalkmarket.MainActivity.farmer;
 
 public class TransactionsFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
@@ -51,8 +52,7 @@ public class TransactionsFragment extends Fragment implements SwipeRefreshLayout
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_missions, null);
-
+        view = inflater.inflate(R.layout.fragment_transactions, null);
         main = (MainActivity) getActivity();
 
         swipeRefreshLayout = view.findViewById(R.id.swipe_refresh_layout);
@@ -74,7 +74,7 @@ public class TransactionsFragment extends Fragment implements SwipeRefreshLayout
     public void getTransactions() {
         swipeRefreshLayout.setRefreshing(true);
         // retrieves info from database
-        DatabaseReference transactionsRef = fireRef.child("users").child(farmer.getuId()).child("transactions");
+        DatabaseReference transactionsRef = fireRef.child("users").child(user.getUid()).child("transactions");
         transactionsRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {

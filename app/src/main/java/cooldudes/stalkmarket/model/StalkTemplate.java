@@ -7,7 +7,9 @@ public class StalkTemplate {
     private long lastUpdate;
     private float price;
 
-    public StalkTemplate(){}
+    public StalkTemplate(){
+        this.lastUpdate = System.currentTimeMillis();
+    }
 
     public long getLastUpdate() {
         return lastUpdate;

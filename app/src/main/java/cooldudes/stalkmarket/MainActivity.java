@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         // sets up nav bar and fragments
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
-        final TransactionsFragment gardenFragment = new TransactionsFragment();
+        final GardenFragment gardenFragment = new GardenFragment();
         loadFragment(gardenFragment);
 
         // finds user's stocks
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 farmer = dataSnapshot.getValue(Farmer.class);
-                gardenFragment.getTransactions();
+//                gardenFragment.getTransactions();
             }
 
             @Override
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         if(fragment != null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                  //  .replace(R.id.fragment_container, fragment)
+                    .replace(R.id.fragment_container, fragment)
                     .commit();
 
             return true;
@@ -72,20 +72,23 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         Fragment fragment = null;
-      /*  switch(menuItem.getItemId()) {
-            case R.id.navigation_missions:
+        switch(menuItem.getItemId()) {
+            case R.id.navigation_garden:
+                fragment = new GardenFragment();
+                break;
+            case R.id.navigation_history:
                 fragment = new TransactionsFragment();
                 break;
-            case R.id.navigation_family:
+            case R.id.navigation_bank:
+                fragment = new BankFragment();
+                break;
+            case R.id.navigation_store:
                 fragment = new TransactionsFragment();
                 break;
-            case R.id.navigation_leaderboard:
-                fragment = new TransactionsFragment();
+            case R.id.navigation_learn:
+                fragment = new LearnFragment();
                 break;
-            case R.id.navigation_profile:
-                fragment = new TransactionsFragment();
-                break;
-        }*/
+        }
         return loadFragment(fragment);
     }
 

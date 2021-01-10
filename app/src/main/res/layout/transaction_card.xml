@@ -27,7 +27,7 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
                 <ImageView
-                    android:id="@+id/image"
+                    android:id="@+id/transaction_image"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/green4"/>

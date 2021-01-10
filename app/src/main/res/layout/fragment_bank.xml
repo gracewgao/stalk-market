@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lightText"
-    tools:context="cooldudes.stalkmarket.model.Bank">
+    tools:context="cooldudes.stalkmarket.BankFragment">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -39,7 +39,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MY ACCOUNTS & BUNDLES"
+                android:text="MY ACCOUNTS &amp; BUNDLES"
                 android:fontFamily="@font/poppins_medium"
                 android:textSize="18dp"
                 android:layout_marginTop="10dp"
@@ -76,7 +76,7 @@
                             android:layout_marginVertical="10dp"
                             android:src="@drawable/cashgreen"/>
                         <TextView
-                            android:id="@+id/savings"
+                            android:id="@+id/savings1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="$300"
@@ -112,7 +112,7 @@
                             android:layout_marginVertical="10dp"
                             android:src="@drawable/cashgreen"/>
                         <TextView
-                            android:id="@+id/savings"
+                            android:id="@+id/savings2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="$300"
@@ -147,7 +147,7 @@
                             android:layout_marginVertical="10dp"
                             android:src="@drawable/cashgreen"/>
                         <TextView
-                            android:id="@+id/savings"
+                            android:id="@+id/savings3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="$300"
@@ -180,7 +180,7 @@
                     android:background="@drawable/greenoutline"
                     android:gravity="center">
                     <ImageView
-                        android:id="@+id/veggiemf"
+                        android:id="@+id/veggiemf1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/veggiemfbuy"/>
@@ -238,7 +238,7 @@
                     android:background="@drawable/greenoutline"
                     android:gravity="center">
                     <ImageView
-                        android:id="@+id/veggiemf"
+                        android:id="@+id/fruitmf"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/fruitmf"/>
