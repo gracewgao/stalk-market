@@ -13,9 +13,12 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import cooldudes.stalkmarket.R;
 import cooldudes.stalkmarket.model.Farmer;
+import cooldudes.stalkmarket.model.Stalk;
 
 import static cooldudes.stalkmarket.ui.activity.LoginActivity.user;
 import static cooldudes.stalkmarket.ui.fragment.TransactionsFragment.tradeStalk;
@@ -24,6 +27,8 @@ public class Onboarding3Activity extends AppCompatActivity {
 
     private ImageButton plant1Button, plant2Button, plant3Button;
     private TextView whyButton;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +40,13 @@ public class Onboarding3Activity extends AppCompatActivity {
         plant3Button = findViewById(R.id.plant3_button);
         whyButton = findViewById(R.id.why_button);
 
+
+
         plant1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 createUser(1);
+                DatabaseReference usersRef = ref.child("users");
             }
         });
         plant2Button.setOnClickListener(new View.OnClickListener() {
@@ -84,6 +92,7 @@ public class Onboarding3Activity extends AppCompatActivity {
                 // failed to save
             }
         });
+        ;
     }
 
 

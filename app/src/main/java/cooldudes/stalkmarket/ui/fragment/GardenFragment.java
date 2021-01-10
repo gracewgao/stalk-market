@@ -19,6 +19,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.concurrent.Executor;
+import java.util.concurrent.ScheduledExecutorService;
 import org.w3c.dom.Text;
 
 import java.util.Collections;
@@ -43,12 +45,17 @@ public class GardenFragment extends Fragment {
 
     DatabaseReference fireRef = FirebaseDatabase.getInstance().getReference();
 
+    public static TextView data;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_garden, null);
 
         main = (MainActivity) getActivity();
+
+        data = (TextView) view.findViewById(R.id.stocks);
+        fetchData process = new fetchData();
+        process.execute();
 
         balanceButton = view.findViewById(R.id.balance);
         if (user != null) {
