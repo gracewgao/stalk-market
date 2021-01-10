@@ -74,12 +74,15 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         Fragment fragment = null;
         switch(menuItem.getItemId()) {
             case R.id.navigation_missions:
-                fragment = new MissionsFragment();
+                fragment = new TransactionsFragment();
                 break;
             case R.id.navigation_family:
-                fragment = new FamilyFragment();
+                fragment = new TransactionsFragment();
                 break;
             case R.id.navigation_leaderboard:
+                fragment = new TransactionsFragment();
+                break;
+            case R.id.navigation_profile:
                 fragment = new TransactionsFragment();
                 break;
         }
