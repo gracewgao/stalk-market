@@ -1,4 +1,4 @@
-package cooldudes.stalkmarket;
+package cooldudes.stalkmarket.ui.fragment;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -20,13 +20,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
+import cooldudes.stalkmarket.R;
+import cooldudes.stalkmarket.helper.StalksAdapter;
 import cooldudes.stalkmarket.model.Stalk;
-import cooldudes.stalkmarket.model.Transaction;
+import cooldudes.stalkmarket.ui.activity.MainActivity;
 
-import static cooldudes.stalkmarket.LoginActivity.user;
+import static cooldudes.stalkmarket.ui.activity.LoginActivity.user;
 
 public class StoreFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 

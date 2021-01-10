@@ -12,7 +12,7 @@
 
 
 
-        <activity android:name="cooldudes.stalkmarket.LoginActivity">
+        <activity android:name="cooldudes.stalkmarket.ui.activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,23 +20,22 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Onboarding1Activity" />
-        <activity android:name=".Onboarding2Activity" />
-        <activity android:name=".Onboarding3Activity" />
-        <activity android:name=".Onboarding4Activity" />
-        <activity android:name=".DiversifyActivity" />
-        <activity android:name=".SupplyActivity" />
-        <activity android:name=".CompoundActivity" />
+        <activity android:name=".ui.activity.Onboarding1Activity" />
+        <activity android:name=".ui.activity.Onboarding2Activity" />
+        <activity android:name=".ui.activity.Onboarding3Activity" />
+        <activity android:name=".ui.activity.Onboarding4Activity" />
+        <activity android:name=".ui.activity.DiversifyActivity" />
+        <activity android:name=".ui.activity.SupplyActivity" />
+        <activity android:name=".ui.activity.CompoundActivity" />
 
-        <activity android:name=".MainActivity" />
-        <activity android:name=".FamilyMemberProfile" />
+        <activity android:name=".ui.activity.MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
         <receiver
-            android:name=".AlarmReceiver"
+            android:name=".helper.AlarmReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>

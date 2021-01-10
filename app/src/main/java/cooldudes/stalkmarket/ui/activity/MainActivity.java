@@ -1,11 +1,11 @@
-package cooldudes.stalkmarket;
+package cooldudes.stalkmarket.ui.activity;
 
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.fragment.app.Fragment;
 import androidx.appcompat.app.AppCompatActivity;
-import android.util.Log;
+
 import android.view.MenuItem;
 
 import com.google.firebase.database.DataSnapshot;
@@ -14,11 +14,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import cooldudes.stalkmarket.helper.AlarmReceiver;
+import cooldudes.stalkmarket.ui.fragment.BankFragment;
+import cooldudes.stalkmarket.ui.fragment.GardenFragment;
+import cooldudes.stalkmarket.ui.fragment.LearnFragment;
+import cooldudes.stalkmarket.R;
+import cooldudes.stalkmarket.ui.fragment.StoreFragment;
+import cooldudes.stalkmarket.ui.fragment.TransactionsFragment;
 import cooldudes.stalkmarket.model.Farmer;
-import cooldudes.stalkmarket.model.Member;
-import cooldudes.stalkmarket.model.Mission;
 
-import static cooldudes.stalkmarket.LoginActivity.user;
+import static cooldudes.stalkmarket.ui.activity.LoginActivity.user;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 

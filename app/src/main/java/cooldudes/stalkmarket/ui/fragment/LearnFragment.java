@@ -1,4 +1,4 @@
-package cooldudes.stalkmarket;
+package cooldudes.stalkmarket.ui.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,12 @@ import androidx.fragment.app.Fragment;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import cooldudes.stalkmarket.ui.activity.CompoundActivity;
+import cooldudes.stalkmarket.ui.activity.DiversifyActivity;
+import cooldudes.stalkmarket.R;
+import cooldudes.stalkmarket.ui.activity.SupplyActivity;
+import cooldudes.stalkmarket.ui.activity.MainActivity;
 
 public class LearnFragment extends Fragment {
 

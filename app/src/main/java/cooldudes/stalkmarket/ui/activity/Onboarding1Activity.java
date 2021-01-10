@@ -1,28 +1,21 @@
-package cooldudes.stalkmarket;
+package cooldudes.stalkmarket.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import cooldudes.stalkmarket.model.Farmer;
-import cooldudes.stalkmarket.model.Mission;
-
-import static cooldudes.stalkmarket.LoginActivity.user;
-import static cooldudes.stalkmarket.MainActivity.farmer;
+import cooldudes.stalkmarket.R;
 
 public class Onboarding1Activity extends AppCompatActivity {
 

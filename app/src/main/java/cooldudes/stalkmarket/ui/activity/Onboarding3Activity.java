@@ -1,9 +1,8 @@
-package cooldudes.stalkmarket;
+package cooldudes.stalkmarket.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -15,9 +14,10 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import cooldudes.stalkmarket.R;
 import cooldudes.stalkmarket.model.Farmer;
 
-import static cooldudes.stalkmarket.LoginActivity.user;
+import static cooldudes.stalkmarket.ui.activity.LoginActivity.user;
 
 public class Onboarding3Activity extends AppCompatActivity {
 

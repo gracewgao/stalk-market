@@ -1,7 +1,6 @@
-package cooldudes.stalkmarket;
+package cooldudes.stalkmarket.ui.fragment;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,18 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import java.util.Collections;
-
-import cooldudes.stalkmarket.model.Mission;
-
-import static cooldudes.stalkmarket.LoginActivity.famId;
-import static cooldudes.stalkmarket.MainActivity.farmer;
+import cooldudes.stalkmarket.R;
+import cooldudes.stalkmarket.ui.activity.MainActivity;
 
 public class GardenFragment extends Fragment {
 

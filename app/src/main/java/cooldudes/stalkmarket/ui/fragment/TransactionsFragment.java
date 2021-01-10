@@ -1,4 +1,4 @@
-package cooldudes.stalkmarket;
+package cooldudes.stalkmarket.ui.fragment;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,12 +24,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import cooldudes.stalkmarket.model.Mission;
+import cooldudes.stalkmarket.R;
+import cooldudes.stalkmarket.helper.TransactionAdapter;
 import cooldudes.stalkmarket.model.Transaction;
+import cooldudes.stalkmarket.ui.activity.MainActivity;
 
-import static cooldudes.stalkmarket.LoginActivity.famId;
-import static cooldudes.stalkmarket.LoginActivity.user;
-import static cooldudes.stalkmarket.MainActivity.farmer;
+import static cooldudes.stalkmarket.ui.activity.LoginActivity.user;
 
 public class TransactionsFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
