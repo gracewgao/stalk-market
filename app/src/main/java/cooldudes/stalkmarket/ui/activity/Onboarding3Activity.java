@@ -46,7 +46,6 @@ public class Onboarding3Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 createUser(1);
-                DatabaseReference usersRef = ref.child("users");
             }
         });
         plant2Button.setOnClickListener(new View.OnClickListener() {
