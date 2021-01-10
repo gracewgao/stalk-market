@@ -9,11 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.cooldudes.stalkmarket.History"></activity>
+        <activity android:name=".model.Bank"></activity>
+        <activity android:name="com.cooldudes.stalkmarket.History" />
         <activity android:name=".OnboardingActivity" />
         <activity android:name=".JoinFamilyActivity" />
         <activity android:name=".CreateFamilyActivity" />
         <activity android:name=".FamilyMemberProfile" />
+        <activity android:name=".History" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
