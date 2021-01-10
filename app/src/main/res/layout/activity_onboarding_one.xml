@@ -6,63 +6,66 @@
     android:background="@color/lightText"
     android:fillViewport="true">
 
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textAlignment="center"
-        android:layout_gravity="center_horizontal"
-        android:orientation="vertical"
-        android:fillViewport="true">
-
-        <RelativeLayout
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="90dp"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:fillViewport="true">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="35dp"
-                android:text="did you know?"
-                android:textSize="20dp"
-                android:fontFamily="@font/poppins_medium"
-                android:layout_centerHorizontal="true"
-                android:textColor="@color/darkGreen" />
-            <TextView
-                android:id="@+id/insert_fun_fact"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="75dp"
-                android:fontFamily="@font/poppins"
-                android:layout_gravity="center_horizontal"
-                android:text="*insert fun fact here*"
-                android:textSize="12dp"
-                android:textColor="@color/darkGreen" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="90dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="35dp"
+                    android:text="did you know?"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/darkGreen" />
+                <TextView
+                    android:id="@+id/insert_fun_fact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="75dp"
+                    android:fontFamily="@font/poppins"
+                    android:layout_gravity="center_horizontal"
+                    android:text="*insert fun fact here*"
+                    android:textSize="12dp"
+                    android:textColor="@color/darkGreen" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/rectangle" />
+            </RelativeLayout>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/rectangle" />
-        </RelativeLayout>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/title" />
+                android:src="@drawable/title" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/amico" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/amico" />
 
+        </LinearLayout>
         <ImageButton
             android:id="@+id/next_button"
             android:layout_width="wrap_content"
@@ -74,8 +77,6 @@
             android:background="@null"
             android:scaleType="fitEnd"
             android:src="@drawable/next_one" />
-
-    </LinearLayout>
-
+    </RelativeLayout>
 
 </FrameLayout>
