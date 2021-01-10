@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="360dp"
+        android:layout_height="670dp"
+        card_view:cardCornerRadius="30dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/lightText">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/close"
+                android:layout_margin="10dp"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingTop="50dp"
+                    android:paddingLeft="40dp"
+                    android:paddingRight="40dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Compound Interest"
+                        android:paddingBottom="10dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textSize="18dp"
+                        android:textColor="@color/darkGreen" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Compound interest is interest calculated on the money put into a bank account, including all of the accumulated interest from previous periods on that money as well."
+                        android:textSize="14dp"
+                        android:fontFamily="@font/poppins"
+                        android:textColor="@color/darkGreen" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="10dp"
+                        android:src="@drawable/insert_money" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="By leaving your money longer in a bank account. You can leave out the risk of losing money on the stalk market!
+                        \n\nHowever at the same time, you have the possiblity to earn more money over a shorter period of time in the stalk market, than leaving money in for a period of time in a bank account."
+                        android:textSize="14dp"
+
+                        android:fontFamily="@font/poppins"
+                        android:textColor="@color/darkGreen" />
+                </LinearLayout>
+
+            </ScrollView>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>
