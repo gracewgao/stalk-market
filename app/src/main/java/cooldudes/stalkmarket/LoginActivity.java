@@ -81,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
         FirebaseUserMetadata metadata = user.getMetadata();
         if (Math.abs(metadata.getCreationTimestamp() - metadata.getLastSignInTimestamp()) < 100) {
             // creates new user
-            Intent i = new Intent(this, OnboardingActivity.class);
+            Intent i = new Intent(this, Onboarding1Activity.class);
             this.startActivity(i);
             this.finish();
             Toast.makeText(getApplicationContext(), "Signed in as " + user.getDisplayName(), Toast.LENGTH_SHORT).show();

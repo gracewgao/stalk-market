@@ -18,6 +18,7 @@
             android:background="@color/lightText">
 
         <ImageView
+            android:id="@+id/close_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/close"

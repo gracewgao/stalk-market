@@ -69,6 +69,7 @@
                     android:textColor="@color/lightText"
                     android:text="Your parents have entrusted you with a small bundle of $300 for you to start off your farm!" />
                 <ImageButton
+                    android:id="@+id/next_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="-50dp"

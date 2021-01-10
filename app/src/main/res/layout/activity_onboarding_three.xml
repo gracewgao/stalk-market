@@ -76,6 +76,7 @@
                                         android:textColor="@color/darkGreen"
                                         android:layout_height="wrap_content"/>
                                     <ImageButton
+                                        android:id="@+id/plant1_button"
                                         android:background="@null"
 
                                         android:src="@drawable/starterplantpurchase"
@@ -117,8 +118,8 @@
                                             android:textColor="@color/darkGreen"
                                             android:layout_height="wrap_content"/>
                                         <ImageButton
+                                            android:id="@+id/plant2_button"
                                             android:background="@null"
-
                                             android:src="@drawable/starterplantpurchase"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
@@ -158,6 +159,7 @@
                                         android:textColor="@color/darkGreen"
                                         android:layout_height="wrap_content"/>
                                     <ImageButton
+                                        android:id="@+id/plant3_button"
                                         android:background="@null"
 
                                         android:src="@drawable/starterplantpurchase"
@@ -183,16 +185,13 @@
 
             </LinearLayout>
             <TextView
+                android:id="@+id/why_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/lightText"
                 android:layout_gravity="center_horizontal"
-
-
                 android:layout_marginTop="30dp"
                 android:text="Why would I buy a more expensive plant?" />
-
-
 
         </LinearLayout>
 
