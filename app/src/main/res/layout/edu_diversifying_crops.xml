@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="360dp"
+        android:layout_height="670dp"
+        card_view:cardCornerRadius="30dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/lightText">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/close"
+                android:layout_margin="10dp"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingTop="50dp"
+                    android:paddingLeft="40dp"
+                    android:paddingRight="40dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Diversifying Crops"
+                        android:paddingBottom="10dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textSize="18dp"
+                        android:textColor="@color/darkGreen" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="A safer option for your farm in the case of disasters is to diversify your crops!
+                        \n\nMonocultures, when struck by a disaster all of your crops would be at risk!"
+                        android:textSize="14dp"
+                        android:fontFamily="@font/poppins"
+                        android:textColor="@color/darkGreen" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="10dp"
+                        android:src="@drawable/water_plant" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Since you can’t make 100% accurate predictions about the future, diversification ensures that by not 'putting all your eggs in one basket,' you will not be creating an unwanted risk to your farm. Diversifying your crop is important because it keeps any part of your farm from being too heavily weighted toward one crop or species." android:textSize="14dp"
+
+                        android:fontFamily="@font/poppins"
+                        android:textColor="@color/darkGreen" />
+                </LinearLayout>
+
+            </ScrollView>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>
