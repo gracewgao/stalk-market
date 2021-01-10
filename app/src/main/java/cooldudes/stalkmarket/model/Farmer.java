@@ -10,7 +10,7 @@ public class Farmer {
 
     public Farmer(){}
 
-    public Farmer(String userId, String userName, String fId, String photo){
+    public Farmer(String userId, String userName){
         this.uId = userId;
         this.name = userName;
         this.balance = 30;
