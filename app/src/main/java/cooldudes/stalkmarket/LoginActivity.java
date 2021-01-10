@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
-        // Checks if user is signed in
+
         if (user != null){
             onSignedInInitialize(user);
         } else {
@@ -53,15 +53,14 @@ public class LoginActivity extends AppCompatActivity {
                                     new AuthUI.IdpConfig.GoogleBuilder().build(),
                                     new AuthUI.IdpConfig.EmailBuilder().build()))
                             .setTosAndPrivacyPolicyUrls(
-                                    "https://devpost.com/software/famjam-ytn3bv",
-                                    "https://devpost.com/software/famjam-ytn3bv")
+                                    "https://devpost.com/software/stalkmarket",
+                                    "https://devpost.com/software/stalkmarket")
                             .build(),
                     RC_SIGN_IN);
         }
 
     }
 
-    // Checks if user is properly signed in
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);

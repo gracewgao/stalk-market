@@ -14,6 +14,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import cooldudes.stalkmarket.model.Farmer;
 import cooldudes.stalkmarket.model.Member;
 import cooldudes.stalkmarket.model.Mission;
 
@@ -23,10 +24,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     final static String TAG = MainActivity.class.getSimpleName();
 
-    // Firebase
+    // firebase
     public static DatabaseReference fireRef = FirebaseDatabase.getInstance().getReference();
 
-    public static Member member;
+    public static Farmer farmer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,19 +35,17 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         setContentView(R.layout.activity_main);
 
         // sets up nav bar and fragments
-        //BottomNavigationView navigation = findViewById(R.id.navigation);
-       // navigation.setOnNavigationItemSelectedListener(this);
-        final MissionsFragment mission = new MissionsFragment();
-        loadFragment(mission);
+        BottomNavigationView navigation = findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(this);
+        final TransactionsFragment gardenFragment = new TransactionsFragment();
+        loadFragment(gardenFragment);
 
-        // finds family of user
-        fireRef.child("members").child(user.getUid()).addValueEventListener(new ValueEventListener() {
+        // finds user's stocks
+        fireRef.child("users").child(user.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                member = dataSnapshot.getValue(Member.class);
-                LoginActivity.famId = member.getFamId();
-                mission.getMissions();
-
+                farmer = dataSnapshot.getValue(Farmer.class);
+                gardenFragment.getTransactions();
             }
 
             @Override
@@ -54,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             }
         });
 
-        // generates new missions every week
+        // updates stock prices every hour
         AlarmReceiver.setReset(this);
     }
 
@@ -75,16 +74,16 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         Fragment fragment = null;
       /*  switch(menuItem.getItemId()) {
             case R.id.navigation_missions:
-                fragment = new MissionsFragment();
+                fragment = new TransactionsFragment();
                 break;
             case R.id.navigation_family:
-                fragment = new FamilyFragment();
-                break;
-            case R.id.navigation_profile:
-                fragment = new ProfileFragment();
+                fragment = new TransactionsFragment();
                 break;
             case R.id.navigation_leaderboard:
-                fragment = new LeaderboardFragment();
+                fragment = new TransactionsFragment();
+                break;
+            case R.id.navigation_profile:
+                fragment = new TransactionsFragment();
                 break;
         }*/
         return loadFragment(fragment);
@@ -92,22 +91,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     // set up listener for when data changed --> sends relevant notifications to user
     public void setUpNotifs(){
-        DatabaseReference requestRef = fireRef.child("requests");
-        requestRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot snapshot) {
 
-                // clears the list to fetch new data
-                for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
-                    Mission m = itemSnapshot.getValue(Mission.class);
-
-                }
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.e(TAG, "onCancelled: " + databaseError);
-            }
-        });
     }
 
 }

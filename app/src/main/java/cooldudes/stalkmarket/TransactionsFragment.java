@@ -1,17 +1,18 @@
 package cooldudes.stalkmarket;
 
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.firebase.database.DataSnapshot;
@@ -25,28 +26,26 @@ import java.util.Collections;
 import java.util.List;
 
 import cooldudes.stalkmarket.model.Mission;
+import cooldudes.stalkmarket.model.Transaction;
 
 import static cooldudes.stalkmarket.LoginActivity.famId;
 import static cooldudes.stalkmarket.MainActivity.farmer;
 
-public class MissionsFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
+public class TransactionsFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
-    private static final String TAG = MissionsFragment.class.getSimpleName();
+    private static final String TAG = TransactionsFragment.class.getSimpleName();
 
     private SwipeRefreshLayout swipeRefreshLayout;
     public RecyclerView recyclerView;
     private TextView msgView;
     private View view;
 
-    private List<Mission> missions = new ArrayList<>();
+    private List<Transaction> transactions = new ArrayList<>();
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
 
-    private final int REQUEST_ACCESS_FINE_LOCATION=1;
-    private FusedLocationProviderClient fusedLocationClient;
     private MainActivity main;
 
-    // Firebase
     DatabaseReference fireRef = FirebaseDatabase.getInstance().getReference();
 
     @Nullable
@@ -64,35 +63,30 @@ public class MissionsFragment extends Fragment implements SwipeRefreshLayout.OnR
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(main);
         recyclerView.setLayoutManager(layoutManager);
-        mAdapter = new ItemAdapter(missions, main);
+        mAdapter = new TransactionAdapter(transactions, main);
         recyclerView.setAdapter(mAdapter);
 
-        if (famId!=null){
-            getMissions();
-        }
+        getTransactions();
 
         return view;
     }
 
-    public void getMissions() {
+    public void getTransactions() {
         swipeRefreshLayout.setRefreshing(true);
         // retrieves info from database
-        DatabaseReference missionsRef = fireRef.child("families").child(famId).child("missions");
-        missionsRef.addValueEventListener(new ValueEventListener() {
+        DatabaseReference transactionsRef = fireRef.child("users").child(farmer.getuId()).child("transactions");
+        transactionsRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 // clears the list to fetch new data
-                missions.clear();
+                transactions.clear();
                 for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
-                    Mission m = itemSnapshot.getValue(Mission.class);
-                    // only displays if the mission is yours and active
-                   if (m.getMember().equals(farmer.getuId()) && m.isActive()) {
-                        MissionsFragment.this.missions.add(m);
-                    }
+                   Transaction t = itemSnapshot.getValue(Transaction.class);
+                   TransactionsFragment.this.transactions.add(t);
                 }
 
-                // sorts missions based on time, status
-                 Collections.sort(missions);
+                // sorts based on time
+                 Collections.sort(transactions);
 
                 // refreshes recycler view
                 mAdapter.notifyDataSetChanged();
@@ -108,7 +102,7 @@ public class MissionsFragment extends Fragment implements SwipeRefreshLayout.OnR
     // reloads when refreshed
     @Override
     public void onRefresh() {
-        getMissions();
+        getTransactions();
     }
 
 }
