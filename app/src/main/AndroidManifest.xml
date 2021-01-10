@@ -20,12 +20,14 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".OnboardingActivity" />
-
         <activity android:name=".Onboarding1Activity" />
         <activity android:name=".Onboarding2Activity" />
         <activity android:name=".Onboarding3Activity" />
         <activity android:name=".Onboarding4Activity" />
+        <activity android:name=".DiversifyActivity" />
+        <activity android:name=".SupplyActivity" />
+        <activity android:name=".CompoundActivity" />
+
         <activity android:name=".MainActivity" />
         <activity android:name=".FamilyMemberProfile" />
 

@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     private static int RC_SIGN_IN = 1;
     private static String ANONYMOUS = null;
 
-    DatabaseReference fireRef = FirebaseDatabase.getInstance().getReference();
+    public static DatabaseReference fireRef = FirebaseDatabase.getInstance().getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

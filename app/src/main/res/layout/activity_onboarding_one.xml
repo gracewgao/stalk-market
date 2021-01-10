@@ -32,6 +32,7 @@
                 android:layout_centerHorizontal="true"
                 android:textColor="@color/darkGreen" />
             <TextView
+                android:id="@+id/insert_fun_fact"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
