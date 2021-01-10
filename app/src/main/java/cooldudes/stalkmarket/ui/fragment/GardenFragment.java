@@ -15,15 +15,19 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
+import org.w3c.dom.Text;
 
 import cooldudes.stalkmarket.R;
 import cooldudes.stalkmarket.ui.activity.MainActivity;
+
+import static cooldudes.stalkmarket.ui.activity.MainActivity.farmer;
 
 public class GardenFragment extends Fragment {
 
     private static final String TAG = BankFragment.class.getSimpleName();
 
     private View view;
+    private TextView balanceButton;
 
     private MainActivity main;
 
@@ -36,9 +40,14 @@ public class GardenFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_garden, null);
 
         main = (MainActivity) getActivity();
+
         data = (TextView) view.findViewById(R.id.stocks);
         fetchData process = new fetchData();
         process.execute();
+
+        balanceButton = view.findViewById(R.id.balance);
+        if (farmer != null) balanceButton.setText(String.valueOf(farmer.getBalance()));
+
         return view;
     }
 

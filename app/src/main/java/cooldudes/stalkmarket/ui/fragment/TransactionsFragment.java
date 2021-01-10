@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -30,6 +31,7 @@ import cooldudes.stalkmarket.model.Transaction;
 import cooldudes.stalkmarket.ui.activity.MainActivity;
 
 import static cooldudes.stalkmarket.ui.activity.LoginActivity.user;
+import static cooldudes.stalkmarket.ui.activity.MainActivity.farmer;
 
 public class TransactionsFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
@@ -47,12 +49,16 @@ public class TransactionsFragment extends Fragment implements SwipeRefreshLayout
     private MainActivity main;
 
     DatabaseReference fireRef = FirebaseDatabase.getInstance().getReference();
+    private Button balanceButton;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_transactions, null);
         main = (MainActivity) getActivity();
+
+        balanceButton = view.findViewById(R.id.balance);
+        if (farmer != null) balanceButton.setText(String.valueOf(farmer.getBalance()));
 
         swipeRefreshLayout = view.findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(this);

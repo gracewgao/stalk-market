@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,11 +17,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import cooldudes.stalkmarket.R;
 import cooldudes.stalkmarket.ui.activity.MainActivity;
 
+import static cooldudes.stalkmarket.ui.activity.MainActivity.farmer;
+
 public class BankFragment extends Fragment {
 
     private static final String TAG = BankFragment.class.getSimpleName();
 
     private View view;
+    private Button balanceButton;
 
     private MainActivity main;
 
@@ -30,8 +35,10 @@ public class BankFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_bank, null);
-
         main = (MainActivity) getActivity();
+
+        balanceButton = view.findViewById(R.id.balance);
+        if (farmer != null) balanceButton.setText(String.valueOf(farmer.getBalance()));
 
         return view;
     }
