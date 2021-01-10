@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 fragment = new BankFragment();
                 break;
             case R.id.navigation_store:
-                fragment = new TransactionsFragment();
+                fragment = new StoreFragment();
                 break;
             case R.id.navigation_learn:
                 fragment = new LearnFragment();

@@ -82,17 +82,7 @@
             android:textColor="@color/darkGreen"/>
 
     </LinearLayout>
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:background="@color/navGreen"
-        android:layout_alignParentBottom="true"
-        app:itemIconTint="@color/lightText"
-        app:itemTextColor="@color/lightText"
-        app:menu="@menu/navigation" />
+
 </RelativeLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

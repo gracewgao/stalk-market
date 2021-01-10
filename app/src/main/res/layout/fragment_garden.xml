@@ -173,7 +173,7 @@
                 android:drawableTop="@drawable/water"
                 android:backgroundTint="@color/lightText"
                 android:layout_alignParentRight="true"
-                android:layout_above="@+id/nav_view"
+                android:layout_alignParentBottom="true"
                 android:text="water"
                 android:textColor="@color/darkGreen"
                 android:fontFamily="@font/poppins"
