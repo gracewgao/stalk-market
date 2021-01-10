@@ -1,4 +1,4 @@
-package cooldudes.stalkmarket;
+package cooldudes.stalkmarket.helper;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,34 +18,39 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
+import cooldudes.stalkmarket.R;
 import cooldudes.stalkmarket.model.Stalk;
+import cooldudes.stalkmarket.model.Transaction;
+import cooldudes.stalkmarket.ui.activity.MainActivity;
 
-import static cooldudes.stalkmarket.MainActivity.farmer;
+import static cooldudes.stalkmarket.ui.activity.MainActivity.farmer;
 
 
-public class StalksAdapter extends RecyclerView.Adapter<StalksAdapter.MyViewHolder> {
-    private static final String TAG = StalksAdapter.class.getSimpleName();
+public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.MyViewHolder> {
+    private static final String TAG = TransactionAdapter.class.getSimpleName();
 
-    private List<Stalk> stalkList;
+    private List<Transaction> transactionList;
     public MainActivity main;
 
     DatabaseReference fireRef = FirebaseDatabase.getInstance().getReference();
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         // views in card
-        public TextView titleTv, priceTv, balanceTv;
+        public TextView amtTv, nameTv, balanceTv;
         public ImageView iconImg;
 
         public MyViewHolder(View v) {
             super(v);
-            titleTv = v.findViewById(R.id.card_title);
-            priceTv = v.findViewById(R.id.card_price);
+            amtTv = v.findViewById(R.id.amt);
+            nameTv = v.findViewById(R.id.itemname);
+            balanceTv = v.findViewById(R.id.balance);
+            iconImg = v.findViewById(R.id.transaction_image);
         }
     }
 
     // constructor
-    public StalksAdapter(List<Stalk> stalks, MainActivity m) {
-        stalkList = stalks;
+    public TransactionAdapter(List<Transaction> transactions, MainActivity m) {
+        transactionList = transactions;
         main = m;
     }
 
@@ -55,7 +60,7 @@ public class StalksAdapter extends RecyclerView.Adapter<StalksAdapter.MyViewHold
                                                        int viewType) {
         // create a new card view
         View card = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.stalk_card, parent, false);
+                .inflate(R.layout.transaction_card, parent, false);
         MyViewHolder vh = new MyViewHolder(card);
         return vh;
     }
@@ -64,8 +69,10 @@ public class StalksAdapter extends RecyclerView.Adapter<StalksAdapter.MyViewHold
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
 
-        final Stalk s = stalkList.get(position);
-        final String stalkId = s.getsId();
+        final Transaction t = transactionList.get(position);
+        final String stalkId = t.getsId();
+        final int action = t.getAction();
+        final int cost = t.getCost();
 
         // retrieves info from mission template
         fireRef.child("users").child(farmer.getuId()).child(stalkId).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -73,25 +80,22 @@ public class StalksAdapter extends RecyclerView.Adapter<StalksAdapter.MyViewHold
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Stalk s = dataSnapshot.getValue(Stalk.class);
 
-                holder.priceTv.setText(s.getCurrentPrice());
-                // todo: change later
-                holder.titleTv.setText("placeholder");
+                holder.nameTv.setText(s.getBuyPrice());
+                holder.amtTv.setText(cost);
 
-//                holder.amtTv.setText(cost);
-//
-//                // card header depending on type
-//                String header = "";
-//                switch (action){
-//                    case 0:
-//                        header = "BUY";
-//                        //todo: add icons?
-//                        break;
-//                    case 1:
-//                        header = "SELL";
-//                        break;
-//                }
-//
-//                holder.balanceTv.setText(header);
+                // card header depending on type
+                String header = "";
+                switch (action){
+                    case 0:
+                        header = "BUY";
+                        //todo: add icons?
+                        break;
+                    case 1:
+                        header = "SELL";
+                        break;
+                }
+
+                holder.balanceTv.setText(header);
 
             }
 
@@ -107,7 +111,7 @@ public class StalksAdapter extends RecyclerView.Adapter<StalksAdapter.MyViewHold
     // returns size of list
     @Override
     public int getItemCount() {
-        return stalkList.size();
+        return transactionList.size();
     }
 
 

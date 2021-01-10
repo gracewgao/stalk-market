@@ -1,4 +1,4 @@
-package cooldudes.stalkmarket;
+package cooldudes.stalkmarket.ui.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,7 +12,10 @@ import androidx.fragment.app.Fragment;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class LearnFragment extends Fragment {
+import cooldudes.stalkmarket.R;
+import cooldudes.stalkmarket.ui.activity.MainActivity;
+
+public class GardenFragment extends Fragment {
 
     private static final String TAG = BankFragment.class.getSimpleName();
 
@@ -26,7 +29,7 @@ public class LearnFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_learn, null);
+        view = inflater.inflate(R.layout.fragment_garden, null);
 
         main = (MainActivity) getActivity();
 

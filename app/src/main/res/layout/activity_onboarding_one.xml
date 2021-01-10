@@ -32,6 +32,7 @@
                 android:layout_centerHorizontal="true"
                 android:textColor="@color/darkGreen" />
             <TextView
+                android:id="@+id/insert_fun_fact"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
@@ -63,9 +64,11 @@
             android:src="@drawable/amico" />
 
         <ImageButton
+            android:id="@+id/next_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
             android:layout_gravity="right"
             android:layout_marginTop="60dp"
             android:background="@null"

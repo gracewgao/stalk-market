@@ -1,4 +1,4 @@
-package cooldudes.stalkmarket;
+package cooldudes.stalkmarket.helper;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;

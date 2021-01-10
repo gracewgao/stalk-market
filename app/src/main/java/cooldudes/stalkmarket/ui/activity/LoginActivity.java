@@ -1,4 +1,4 @@
-package cooldudes.stalkmarket;
+package cooldudes.stalkmarket.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -18,6 +18,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Arrays;
 
+import cooldudes.stalkmarket.R;
+
 public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
@@ -30,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     private static int RC_SIGN_IN = 1;
     private static String ANONYMOUS = null;
 
-    DatabaseReference fireRef = FirebaseDatabase.getInstance().getReference();
+    public static DatabaseReference fireRef = FirebaseDatabase.getInstance().getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +83,7 @@ public class LoginActivity extends AppCompatActivity {
         FirebaseUserMetadata metadata = user.getMetadata();
         if (Math.abs(metadata.getCreationTimestamp() - metadata.getLastSignInTimestamp()) < 100) {
             // creates new user
-            Intent i = new Intent(this, OnboardingActivity.class);
+            Intent i = new Intent(this, Onboarding1Activity.class);
             this.startActivity(i);
             this.finish();
             Toast.makeText(getApplicationContext(), "Signed in as " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
